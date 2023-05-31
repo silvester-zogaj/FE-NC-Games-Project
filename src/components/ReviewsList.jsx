@@ -4,14 +4,19 @@ import { ReviewCard } from "./ReviewCard";
 
 function ReviewsList() {
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getReviews().then(({ reviews }) => {
       setReviews(reviews);
+      setIsLoading(false);
     });
   }, []);
 
-  console.log(reviews);
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <main class="reviews-page">
       <h1 className="page-headings">All reviews</h1>
