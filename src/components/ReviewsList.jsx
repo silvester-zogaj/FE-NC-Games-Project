@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getReviews } from "../utils";
 import { ReviewCard } from "./ReviewCard";
 
-function ReviewsList() {
+function ReviewsList({ setReviewId }) {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -18,8 +18,8 @@ function ReviewsList() {
   }
 
   return (
-    <main class="reviews-page">
-      <h1 className="page-headings">All reviews</h1>
+    <main className="reviews-page">
+      <h2 className="page-headings">All reviews</h2>
       <ul className="review-card-container">
         {reviews.map(({ review_id, owner, title, comment_count, votes }) => {
           return (
@@ -29,6 +29,8 @@ function ReviewsList() {
               title={title}
               comment_count={comment_count}
               votes={votes}
+              review_id={review_id}
+              setReviewId={setReviewId}
             />
           );
         })}
