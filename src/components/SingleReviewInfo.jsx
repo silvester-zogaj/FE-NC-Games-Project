@@ -18,7 +18,7 @@ export function SingleReviewInfo({
       </h3>
       <p>Category: {category}</p>
       <p>"{review_body}"</p>
-      <img src={review_img_url} alt={title} className="single-review-img" />
+      {/* <img src={review_img_url} alt={title} className="single-review-img" /> */}
       <p className="single-review-votes">Votes: {votes}</p>
       <p className="single-review-designer">Game designer: {designer}</p>
       <p className="single-review-date">Posted on: {created_at}</p>

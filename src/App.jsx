@@ -5,7 +5,7 @@ import Nav from "./components/Nav";
 import ReviewsList from "./components/ReviewsList";
 import CategoriesList from "./components/CategoriesList";
 import { SingleReviewContent } from "./components/SingleReviewContent";
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [user, setUser] = useState({
@@ -15,7 +15,8 @@ function App() {
       "https://vignette.wikia.nocookie.net/mrmen/images/7/78/Mr-Grumpy-3A.PNG/revision/latest?cb=20170707233013",
   });
 
-  const [reviewId, setReviewId] = useState(1);
+  const [reviewId, setReviewId] = useState("");
+
 
   return (
     <BrowserRouter>
@@ -29,7 +30,7 @@ function App() {
             element={<ReviewsList setReviewId={setReviewId} />}
           />
           <Route
-            path="/reviews/review"
+            path="/reviews/:review_id"
             element={<SingleReviewContent reviewId={reviewId} />}
           />
         </Routes>

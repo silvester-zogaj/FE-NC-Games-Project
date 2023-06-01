@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import { getSingleReview } from "../utils";
 import { SingleReviewInfo } from "./SingleReviewInfo";
+import { useParams } from "react-router-dom";
 
 export function SingleReviewContent({ reviewId }) {
   const [individualReview, setIndividualReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const  {review_id} = useParams()
 
   useEffect(() => {
-    getSingleReview(reviewId).then(({ review }) => {
+    getSingleReview(review_id).then(({ review }) => {
+      console.log(review);
       setIndividualReview(review);
       setIsLoading(false);
     });
-  }, []);
+  }, [review_id]);
 
   if (isLoading) {
     return <p>Loading...</p>;

@@ -105,6 +105,8 @@ body {
   position: absolute;
   bottom: 0;
   right: 5%;
+  max-width: 150px;
+  width: 40%;
 }
 
 .logo {
