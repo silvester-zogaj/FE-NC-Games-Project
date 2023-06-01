@@ -25,3 +25,14 @@ export const getSingleReview = (review_id) => {
       console.log(err);
     });
 };
+
+export const getReviewComments = (id) => {
+  return ncGamesApi
+    .get(`/reviews/${id}/comments`)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
