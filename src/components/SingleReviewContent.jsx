@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getSingleReview } from "../utils";
 import { SingleReviewInfo } from "./SingleReviewInfo";
+import { Comments } from "./Comments";
 
 export function SingleReviewContent({ reviewId }) {
   const [individualReview, setIndividualReview] = useState({});
@@ -33,6 +34,9 @@ export function SingleReviewContent({ reviewId }) {
           title={individualReview.title}
           votes={individualReview.votes}
         />
+      </ul>
+      <ul>
+        <Comments reviewId={reviewId} />
       </ul>
     </main>
   );
