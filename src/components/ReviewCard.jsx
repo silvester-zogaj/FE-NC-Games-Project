@@ -1,13 +1,31 @@
-export function ReviewCard({ review_id, owner, title, comment_count, votes }) {
+import { Link } from "react-router-dom";
+
+export function ReviewCard({
+  review_id,
+  owner,
+  title,
+  comment_count,
+  votes,
+  setReviewId,
+}) {
   return (
     <li key={review_id} className="review-card">
-      <h2 className="review-card-title">
+      <h3 className="review-card-title">
         <em>{title}</em>
-      </h2>
+      </h3>
       <p className="review-card-username">USER: {owner}</p>
       <p className="review-card-comment_count">comments: {comment_count}</p>
       <p className="review-card-votes">votes: {votes}</p>
-      <button className="review-card-btn">Go to review</button>
+      <Link to="/reviews/review" className="nav-link">
+        <button
+          className="review-card-btn"
+          onClick={() => {
+            setReviewId(review_id);
+          }}
+        >
+          Go to review
+        </button>
+      </Link>
     </li>
   );
 }

@@ -6,7 +6,6 @@ function Nav() {
       <Link to="/" className="nav-link">
         Categories{" "}
       </Link>
-
       <Link to="/reviews" className="nav-link">
         Reviews{" "}
       </Link>
