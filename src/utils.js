@@ -26,9 +26,9 @@ export const getSingleReview = (review_id) => {
     });
 };
 
-export const getReviewComments = (id) => {
+export const getReviewComments = (review_id) => {
   return ncGamesApi
-    .get(`/reviews/${id}/comments`)
+    .get(`/reviews/${review_id}/comments`)
     .then((response) => {
       return response.data;
     })

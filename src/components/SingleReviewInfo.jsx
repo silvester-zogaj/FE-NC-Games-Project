@@ -23,7 +23,7 @@ export function SingleReviewInfo({
       <p className="single-review-designer">Game designer: {designer}</p>
       <p className="single-review-date">Posted on: {created_at}</p>
       <Link to="/reviews" className="nav-link">
-        <button>Go back to all reviews</button>
+        <button className="single-review-btn">Go back to all reviews</button>
       </Link>
     </li>
   );
