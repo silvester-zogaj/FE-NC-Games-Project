@@ -4,7 +4,7 @@ import { SingleReviewInfo } from "./SingleReviewInfo";
 import { Comments } from "./Comments";
 import { useParams } from "react-router-dom";
 
-export function SingleReviewContent({ reviewId }) {
+export function SingleReviewContent() {
   const [individualReview, setIndividualReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { review_id } = useParams();
@@ -29,12 +29,13 @@ export function SingleReviewContent({ reviewId }) {
           category={individualReview.category}
           created_at={individualReview.created_at}
           designer={individualReview.designer}
-          owner={individualReview.owner}
+          // owner={individualReview.owner}
           review_body={individualReview.review_body}
           review_id={individualReview.review_id}
           review_img_url={individualReview.review_img_url}
           title={individualReview.title}
           votes={individualReview.votes}
+          setIndividualReview={setIndividualReview}
         />
       </ul>
       <section>

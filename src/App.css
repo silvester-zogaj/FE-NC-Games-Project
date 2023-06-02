@@ -92,10 +92,22 @@ body {
   position: absolute;
   bottom: 0;
   left: 20%;
-  border: 1px solid white;
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.thumbs {
+  padding: 5px;
+}
+.thumbs-up {
+  background-color: rgb(5, 207, 5);
+}
+
+.thumbs-down {
+  background-color: rgb(253, 43, 43);
+}
 .single-review-img {
   width: 60%;
   height: 400px;
