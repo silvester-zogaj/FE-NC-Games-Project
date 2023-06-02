@@ -36,3 +36,8 @@ export const getReviewComments = (review_id) => {
       console.log(err);
     });
 };
+
+export const patchReviewVotes = (review_id) => {
+  const patchBody = {};
+  return ncGamesApi.patch(`/reviews/${review_id}`, patchBody);
+};
