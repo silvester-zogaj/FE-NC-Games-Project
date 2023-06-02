@@ -26,8 +26,7 @@ body {
 .page-headings {
   font-size: 32px;
   margin-top: 50px;
-  color: rgb(206, 34, 86);
-  -webkit-text-stroke: 0.5px white;
+  color: rgb(255, 62, 120);
 }
 /* ----REVIEW CARD----- */
 .review-card-container {
@@ -92,7 +91,9 @@ body {
   font-weight: 600;
   position: absolute;
   bottom: 0;
-  left: 5%;
+  left: 20%;
+  border: 1px solid white;
+  padding: 10px;
 }
 
 .single-review-img {
@@ -104,9 +105,65 @@ body {
 .single-review-date {
   position: absolute;
   bottom: 0;
-  right: 5%;
+  right: 20%;
   max-width: 150px;
   width: 40%;
+}
+
+.single-review-btn {
+  margin-top: 30px;
+}
+
+/* ----COMMENTS----- */
+
+.comments-heading {
+  margin-top: 150px;
+  margin-bottom: -50px;
+  font-size: 40px;
+  color: rgb(255, 62, 120);
+
+  text-decoration: underline;
+}
+
+.comment-card-container {
+  display: flex;
+  flex-direction: column;
+}
+.comment-card {
+  list-style: none;
+  position: relative;
+  margin-top: 100px;
+}
+.comment-card-author {
+  position: absolute;
+  top: -30%;
+  left: 10%;
+  font-weight: 600;
+  color: rgb(255, 62, 120);
+}
+
+.comment-card-body {
+  background-color: white;
+  border-radius: 10px;
+  text-align: left;
+  height: 150px;
+  width: 80%;
+  margin: 0 auto;
+  color: navy;
+  display: flex;
+  padding: 5px 0 0 5px;
+}
+
+.comment-card-votes {
+  position: absolute;
+  bottom: -30%;
+  left: 10%;
+}
+
+.comment-card-date {
+  position: absolute;
+  bottom: -30%;
+  right: 10%;
 }
 
 .logo {
