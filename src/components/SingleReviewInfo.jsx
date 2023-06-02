@@ -15,12 +15,11 @@ export function SingleReviewInfo({
 }) {
   const { review_id } = useParams();
 
-  
   const upVote = (id) => {
     setIndividualReview((currIndividualReview) => {
-   
+      if (currIndividualReview.votes === votes) {
         return { ...currIndividualReview, votes: votes + 1 };
-      
+      }
       return currIndividualReview;
     });
 
