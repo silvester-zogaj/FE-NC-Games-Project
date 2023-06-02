@@ -18,19 +18,13 @@ export function SingleReviewInfo({
 
   const upVote = (id) => {
     setIndividualReview((currIndividualReview) => {
-      if (currIndividualReview.votes === votes) {
-        return { ...currIndividualReview, votes: votes + 1 };
-      }
-      return currIndividualReview;
+      return { ...currIndividualReview, votes: votes + 1 };
     });
 
     patchReviewUpVote(id).catch((err) => {
       setErr(true);
       console.log(err.response.data);
       setIndividualReview((currIndividualReview) => {
-        if (currIndividualReview.votes === votes) {
-          return { ...currIndividualReview, votes: votes - 1 };
-        }
         return currIndividualReview;
       });
     });
@@ -38,19 +32,13 @@ export function SingleReviewInfo({
 
   const downVote = (id) => {
     setIndividualReview((currIndividualReview) => {
-      if (currIndividualReview.votes === votes) {
-        return { ...currIndividualReview, votes: votes - 1 };
-      }
-      return currIndividualReview;
+      return { ...currIndividualReview, votes: votes - 1 };
     });
 
     patchReviewDownVote(id).catch((err) => {
       setErr(true);
       console.log(err.response.data);
       setIndividualReview((currIndividualReview) => {
-        if (currIndividualReview.votes === votes) {
-          return { ...currIndividualReview, votes: votes + 1 };
-        }
         return currIndividualReview;
       });
     });
