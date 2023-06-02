@@ -109,6 +109,14 @@ body {
 .thumbs-down {
   background-color: rgb(253, 43, 43);
 }
+
+.vote-error-msg {
+  font-size: 16px;
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+  color: goldenrod;
+}
 .single-review-img {
   width: 60%;
   height: 400px;
