@@ -36,3 +36,11 @@ export const getReviewComments = (review_id) => {
       console.log(err);
     });
 };
+
+export const patchReviewUpVote = (review_id) => {
+  return ncGamesApi.patch(`/reviews/${review_id}`, { inc_votes: 1 });
+};
+
+export const patchReviewDownVote = (review_id) => {
+  return ncGamesApi.patch(`/reviews/${review_id}`, { inc_votes: -1 });
+};

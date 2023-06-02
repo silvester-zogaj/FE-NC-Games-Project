@@ -17,7 +17,6 @@ function App() {
 
   const [reviewId, setReviewId] = useState("");
 
-
   return (
     <BrowserRouter>
       <main>
@@ -29,10 +28,7 @@ function App() {
             path="/reviews"
             element={<ReviewsList setReviewId={setReviewId} />}
           />
-          <Route
-            path="/reviews/:review_id"
-            element={<SingleReviewContent reviewId={reviewId} />}
-          />
+          <Route path="/reviews/:review_id" element={<SingleReviewContent />} />
         </Routes>
       </main>
     </BrowserRouter>

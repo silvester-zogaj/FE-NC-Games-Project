@@ -92,10 +92,31 @@ body {
   position: absolute;
   bottom: 0;
   left: 20%;
-  border: 1px solid white;
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.thumbs {
+  padding: 5px;
+  margin: 0 10px;
+}
+.thumbs-up {
+  background-color: rgb(5, 207, 5);
+}
+
+.thumbs-down {
+  background-color: rgb(253, 43, 43);
+}
+
+.vote-error-msg {
+  font-size: 16px;
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+  color: goldenrod;
+}
 .single-review-img {
   width: 60%;
   height: 400px;
