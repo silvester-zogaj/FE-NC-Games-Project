@@ -100,6 +100,7 @@ body {
 
 .thumbs {
   padding: 5px;
+  margin: 0 10px;
 }
 .thumbs-up {
   background-color: rgb(5, 207, 5);

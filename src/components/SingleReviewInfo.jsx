@@ -14,16 +14,44 @@ export function SingleReviewInfo({
   setIndividualReview,
 }) {
   const { review_id } = useParams();
-  const [reviewVote, setReviewVote] = useState("");
 
-  const upVote = (review_id) => {
+  
+  const upVote = (id) => {
     setIndividualReview((currIndividualReview) => {
-      if (currIndividualReview.votes === votes) {
-        return {...currIndividualReview,votes: votes + 1}
-      }
+   
+        return { ...currIndividualReview, votes: votes + 1 };
+      
+      return currIndividualReview;
     });
 
-    
+    patchReviewVotes(id).catch((err) => {
+      console.log(err.response.data);
+      setIndividualReview((currIndividualReview) => {
+        if (currIndividualReview.votes === votes) {
+          return { ...currIndividualReview, votes: votes - 1 };
+        }
+        return currIndividualReview;
+      });
+    });
+  };
+
+  const downVote = (id) => {
+    setIndividualReview((currIndividualReview) => {
+      if (currIndividualReview.votes === votes) {
+        return { ...currIndividualReview, votes: votes - 1 };
+      }
+      return currIndividualReview;
+    });
+
+    patchReviewVotes(id).catch((err) => {
+      console.log(err.response.data);
+      setIndividualReview((currIndividualReview) => {
+        if (currIndividualReview.votes === votes) {
+          return { ...currIndividualReview, votes: votes + 1 };
+        }
+        return currIndividualReview;
+      });
+    });
   };
 
   return (
@@ -35,11 +63,23 @@ export function SingleReviewInfo({
       <p>"{review_body}"</p>
       <img src={review_img_url} alt={title} className="single-review-img" />
       <section className="single-review-votes">
-        <button className="thumbs thumbs-up" onClick={upVote}>
+        <button
+          className="thumbs thumbs-up"
+          onClick={() => {
+            upVote(review_id);
+          }}
+        >
           👍
         </button>
-        <p>Votes: {votes}</p>
-        <button className="thumbs thumbs-down">👎</button>
+        <p>{votes}</p>
+        <button
+          className="thumbs thumbs-down"
+          onClick={() => {
+            downVote(review_id);
+          }}
+        >
+          👎
+        </button>
       </section>
 
       <p className="single-review-designer">Game designer: {designer}</p>
