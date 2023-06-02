@@ -31,6 +31,14 @@ export function Comments() {
           }
         )}
       </ul>
+
+      <form id="post-comment-form">
+        <label htmlFor="post-comment-input"></label>
+        <textarea id="post-comment-input" minLength={900} />
+        <button type="text required" className="post-comment-btn">
+          Post your comment
+        </button>
+      </form>
     </main>
   );
 }
