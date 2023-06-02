@@ -109,6 +109,14 @@ body {
 .thumbs-down {
   background-color: rgb(253, 43, 43);
 }
+
+.vote-error-msg {
+  font-size: 16px;
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+  color: goldenrod;
+}
 .single-review-img {
   width: 60%;
   height: 400px;
@@ -187,22 +195,21 @@ body {
   width: 70%;
   margin: 0 auto;
   margin-top: 100px;
- 
 }
 
+#post-comment-input {
+  width: 80%;
+  margin: 0 auto;
+  height: 150px;
+  background-color: rgb(212, 212, 247);
+  padding: 5px 0 0 5px;
+}
 .post-comment-btn {
   width: 150px;
   height: 40px;
   font-size: 12px;
   margin: 0 auto;
   margin-top: 10px;
-}
-
-textarea {
-  width: 80%;
-  margin: 0 auto;
-  height: 150px;
-  background-color: rgb(212, 212, 247);
 }
 
 .logo {

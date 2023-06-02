@@ -37,7 +37,21 @@ export const getReviewComments = (review_id) => {
     });
 };
 
-export const patchReviewVotes = (review_id) => {
-  const patchBody = {};
-  return ncGamesApi.patch(`/reviews/${review_id}`, patchBody);
+export const patchReviewUpVote = (review_id) => {
+  return ncGamesApi.patch(`/reviews/${review_id}`, { inc_votes: 1 });
+};
+
+export const patchReviewDownVote = (review_id) => {
+  return ncGamesApi.patch(`/reviews/${review_id}`, { inc_votes: -1 });
+};
+
+export const postReviewComment = (review_id, newComment) => {
+  return ncGamesApi
+    .post(`/reviews/${review_id}`, newComment)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };

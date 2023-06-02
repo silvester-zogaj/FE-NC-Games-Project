@@ -28,7 +28,7 @@ function App() {
             path="/reviews"
             element={<ReviewsList setReviewId={setReviewId} />}
           />
-          <Route path="/reviews/:review_id" element={<SingleReviewContent />} />
+          <Route path="/reviews/:review_id" element={<SingleReviewContent user={user}/>} />
         </Routes>
       </main>
     </BrowserRouter>

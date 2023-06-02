@@ -1,10 +1,11 @@
-import { getReviewComments } from "../utils";
+import { getReviewComments, postReviewComment } from "../utils";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { CommentCard } from "./CommentCard";
 
-export function Comments() {
+export function Comments({ user }) {
   const [reviewComments, setReviewComments] = useState([]);
+  const [commentInput, setCommentInput] = useState("");
   const { review_id } = useParams();
 
   useEffect(() => {
@@ -12,6 +13,22 @@ export function Comments() {
       setReviewComments(comments);
     });
   }, [review_id]);
+
+  const handleChange = (event) => {
+    setCommentInput(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    const newComment = {};
+    event.preventDefault();
+
+    // postReviewComment(review_id, newComment).then(({comment}) => {
+    //   console.log
+    // });
+
+    newComment.author = user.username;
+    console.log(newComment);
+  };
 
   return (
     <main>
@@ -32,10 +49,15 @@ export function Comments() {
         )}
       </ul>
 
-      <form id="post-comment-form">
+      <form id="post-comment-form" onSubmit={handleSubmit}>
         <label htmlFor="post-comment-input"></label>
-        <textarea id="post-comment-input" minLength={900} />
-        <button type="text required" className="post-comment-btn">
+        <textarea
+          id="post-comment-input"
+          required
+          onChange={handleChange}
+          value={commentInput}
+        />
+        <button type="submit" className="post-comment-btn">
           Post your comment
         </button>
       </form>
