@@ -47,7 +47,7 @@ export const patchReviewDownVote = (review_id) => {
 
 export const postReviewComment = (review_id, newComment) => {
   return ncGamesApi
-    .post(`/reviews/${review_id}`, newComment)
+    .post(`/reviews/${review_id}/comments`, newComment)
     .then((response) => {
       return response.data;
     })

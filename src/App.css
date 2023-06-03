@@ -211,6 +211,15 @@ body {
   margin: 0 auto;
   margin-top: 10px;
 }
+.post-comment-btn-wait {
+  width: 150px;
+  height: 40px;
+  font-size: 12px;
+  margin: 0 auto;
+  margin-top: 10px;
+  opacity: 0.3;
+  pointer-events: none;
+}
 
 .logo {
   height: 6em;

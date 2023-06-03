@@ -4,7 +4,7 @@ import { SingleReviewInfo } from "./SingleReviewInfo";
 import { Comments } from "./Comments";
 import { useParams } from "react-router-dom";
 
-export function SingleReviewContent({ user }) {
+export function SingleReviewContent({ user}) {
   const [individualReview, setIndividualReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { review_id } = useParams();

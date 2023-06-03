@@ -6,6 +6,8 @@ import { CommentCard } from "./CommentCard";
 export function Comments({ user }) {
   const [reviewComments, setReviewComments] = useState([]);
   const [commentInput, setCommentInput] = useState("");
+  const [waitAfterPost, setWaitAfterPost] = useState(false);
+  const [err, setErr] = useState(false);
   const { review_id } = useParams();
 
   useEffect(() => {
@@ -19,15 +21,25 @@ export function Comments({ user }) {
   };
 
   const handleSubmit = (event) => {
-    const newComment = {};
     event.preventDefault();
+    setWaitAfterPost(true);
 
-    // postReviewComment(review_id, newComment).then(({comment}) => {
-    //   console.log
-    // });
+    const newComment = {};
+    newComment.username = user.username;
+    newComment.body = commentInput;
 
-    newComment.author = user.username;
-    console.log(newComment);
+    postReviewComment(review_id, newComment)
+      .then(({ comment }) => {
+        setReviewComments((currReviewComments) => {
+          setWaitAfterPost(false);
+          return [...currReviewComments, comment];
+        });
+      })
+      .catch((err) => {
+        setErr(true);
+      });
+
+    // setCommentInput("");
   };
 
   return (
@@ -57,9 +69,20 @@ export function Comments({ user }) {
           onChange={handleChange}
           value={commentInput}
         />
-        <button type="submit" className="post-comment-btn">
-          Post your comment
-        </button>
+        {err ? (
+          <p>You are currently offline</p>
+        ) : waitAfterPost ? (
+          <section>
+            <p>Comment posted!</p>
+            <button type="button" className="post-comment-btn-wait">
+              Post your comment
+            </button>
+          </section>
+        ) : (
+          <button type="submit" className="post-comment-btn">
+            Post your comment
+          </button>
+        )}
       </form>
     </main>
   );
