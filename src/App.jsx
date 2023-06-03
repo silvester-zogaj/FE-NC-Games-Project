@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import Nav from "./components/Nav";
 import ReviewsList from "./components/ReviewsList";
 import CategoriesList from "./components/CategoriesList";
 import { SingleReviewContent } from "./components/SingleReviewContent";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SingleCategoryContent } from "./components/SingleCategoryContent";
 
 function App() {
@@ -38,7 +38,12 @@ function App() {
           />
           <Route
             path="/:category_name"
-            element={<SingleCategoryContent categories={categories} />}
+            element={
+              <SingleCategoryContent
+                categories={categories}
+                setReviewId={setReviewId}
+              />
+            }
           />
           <Route
             path="/reviews"
