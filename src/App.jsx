@@ -6,6 +6,7 @@ import ReviewsList from "./components/ReviewsList";
 import CategoriesList from "./components/CategoriesList";
 import { SingleReviewContent } from "./components/SingleReviewContent";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SingleCategoryContent } from "./components/SingleCategoryContent";
 
 function App() {
   const [user, setUser] = useState({
@@ -16,6 +17,8 @@ function App() {
   });
 
   const [reviewId, setReviewId] = useState("");
+  const [categories, setCategories] = useState([]);
+  const [categoryFilter, setCategoryFilter] = useState("");
 
   return (
     <BrowserRouter>
@@ -23,14 +26,27 @@ function App() {
         <Header />
         <Nav />
         <Routes>
-          <Route path="/" element={<CategoriesList />} />
+          <Route
+            path="/"
+            element={
+              <CategoriesList
+                categories={categories}
+                setCategories={setCategories}
+                setCategoryFilter={setCategoryFilter}
+              />
+            }
+          />
+          <Route
+            path="/:category_name"
+            element={<SingleCategoryContent categories={categories} />}
+          />
           <Route
             path="/reviews"
-            element={<ReviewsList setReviewId={setReviewId}/>}
+            element={<ReviewsList setReviewId={setReviewId} />}
           />
           <Route
             path="/reviews/:review_id"
-            element={<SingleReviewContent user={user}/>}
+            element={<SingleReviewContent user={user} />}
           />
         </Routes>
       </main>
