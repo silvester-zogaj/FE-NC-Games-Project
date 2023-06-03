@@ -1,10 +1,13 @@
-import { getReviewComments } from "../utils";
+import { getReviewComments, postReviewComment } from "../utils";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { CommentCard } from "./CommentCard";
 
-export function Comments() {
+export function Comments({ user }) {
   const [reviewComments, setReviewComments] = useState([]);
+  const [commentInput, setCommentInput] = useState("");
+  const [waitAfterPost, setWaitAfterPost] = useState(false);
+  const [err, setErr] = useState(false);
   const { review_id } = useParams();
 
   useEffect(() => {
@@ -12,6 +15,32 @@ export function Comments() {
       setReviewComments(comments);
     });
   }, [review_id]);
+
+  const handleChange = (event) => {
+    setCommentInput(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setWaitAfterPost(true);
+
+    const newComment = {};
+    newComment.username = user.username;
+    newComment.body = commentInput;
+
+    postReviewComment(review_id, newComment)
+      .then(({ comment }) => {
+        setReviewComments((currReviewComments) => {
+          setWaitAfterPost(false);
+          return [...currReviewComments, comment];
+        });
+      })
+      .catch((err) => {
+        setErr(true);
+      });
+
+    // setCommentInput("");
+  };
 
   return (
     <main>
@@ -31,6 +60,30 @@ export function Comments() {
           }
         )}
       </ul>
+
+      <form id="post-comment-form" onSubmit={handleSubmit}>
+        <label htmlFor="post-comment-input"></label>
+        <textarea
+          id="post-comment-input"
+          required
+          onChange={handleChange}
+          value={commentInput}
+        />
+        {err ? (
+          <p>You are currently offline</p>
+        ) : waitAfterPost ? (
+          <section>
+            <p>Comment posted!</p>
+            <button type="button" className="post-comment-btn-wait">
+              Post your comment
+            </button>
+          </section>
+        ) : (
+          <button type="submit" className="post-comment-btn">
+            Post your comment
+          </button>
+        )}
+      </form>
     </main>
   );
 }

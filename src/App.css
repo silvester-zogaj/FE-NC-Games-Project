@@ -187,6 +187,40 @@ body {
   right: 10%;
 }
 
+/* ----POST COMMENT FORM----- */
+
+#post-comment-form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+#post-comment-input {
+  width: 80%;
+  margin: 0 auto;
+  height: 150px;
+  background-color: rgb(212, 212, 247);
+  padding: 5px 0 0 5px;
+}
+.post-comment-btn {
+  width: 150px;
+  height: 40px;
+  font-size: 12px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.post-comment-btn-wait {
+  width: 150px;
+  height: 40px;
+  font-size: 12px;
+  margin: 0 auto;
+  margin-top: 10px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
