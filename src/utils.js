@@ -55,3 +55,14 @@ export const postReviewComment = (review_id, newComment) => {
       console.log(err);
     });
 };
+
+export const getCategories = () => {
+  return ncGamesApi
+    .get(`/categories`)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

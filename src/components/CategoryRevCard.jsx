@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export function ReviewCard({
+export function CategoryRevCard({
   review_id,
   owner,
   title,
