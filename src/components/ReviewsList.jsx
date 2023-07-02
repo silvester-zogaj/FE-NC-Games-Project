@@ -35,7 +35,6 @@ function ReviewsList({ setReviewId }) {
           );
         })}
       </ul>
-      ;
     </main>
   );
 }

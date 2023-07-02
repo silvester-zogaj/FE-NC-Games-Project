@@ -8,8 +8,6 @@ export function ReviewCard({
   votes,
   setReviewId,
 }) {
-
-  
   return (
     <li key={review_id} className="review-card">
       <h3 className="review-card-title">

@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgba(12, 11, 61, 0.884);
+  background-color: rgba(12, 11, 61, 0.651);
   color: white;
 }
 
@@ -38,7 +38,7 @@ body {
   border: 2px solid black;
   margin: 50px;
   width: 450px;
-  height: 350px;
+  height: 300px;
   list-style: none;
   position: relative;
   background-color: rgba(204, 14, 71, 0.884);
@@ -48,7 +48,7 @@ body {
 }
 
 .review-card-title {
-  margin-top: 30%;
+  margin-top: 25%;
   color: white;
 }
 
@@ -70,8 +70,8 @@ body {
 }
 
 .review-card-btn {
-  border: 2px solid navy;
-  background-color: gainsboro;
+  border: 2px solid white;
+  background-color: navy;
   position: absolute;
   bottom: 0;
   transform: translate(-50%, -50%);
@@ -133,6 +133,7 @@ body {
 
 .single-review-btn {
   margin-top: 30px;
+  background-color: rgb(255, 62, 120);
 }
 
 /* ----COMMENTS----- */
@@ -201,15 +202,17 @@ body {
   width: 80%;
   margin: 0 auto;
   height: 150px;
-  background-color: rgb(212, 212, 247);
+  background-color: rgb(218, 218, 247);
+  color: black;
   padding: 5px 0 0 5px;
 }
 .post-comment-btn {
-  width: 150px;
-  height: 40px;
-  font-size: 12px;
+  width: 180px;
+  height: 50px;
+  font-size: 14px;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 25px;
+  background-color: rgb(255, 62, 120);
 }
 .post-comment-btn-wait {
   width: 150px;
@@ -232,9 +235,10 @@ body {
 
 .category-card {
   list-style: none;
-  background-color: rgb(28, 28, 56);
+  background-color: rgb(211, 213, 233);
   border-radius: 10px;
   padding: 15px;
+  color: navy;
 }
 
 .category-card-name {
