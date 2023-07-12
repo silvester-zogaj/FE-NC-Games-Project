@@ -1,4 +1,8 @@
-import { getReviewComments, postReviewComment } from "../utils";
+import {
+  getReviewComments,
+  postReviewComment,
+  deleteReviewComment,
+} from "../utils";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { CommentCard } from "./CommentCard";
@@ -39,7 +43,7 @@ export function Comments({ user }) {
         setErr(true);
       });
 
-    // setCommentInput("");
+    setCommentInput("");
   };
 
   return (
@@ -55,6 +59,9 @@ export function Comments({ user }) {
                 body={body}
                 created_at={created_at}
                 votes={votes}
+                user={user}
+                comment_id={comment_id}
+                setReviewComments={setReviewComments}
               />
             );
           }
@@ -75,12 +82,12 @@ export function Comments({ user }) {
           <section>
             <p>Comment posted!</p>
             <button type="button" className="post-comment-btn-wait">
-              Post your comment
+              Post comment
             </button>
           </section>
         ) : (
           <button type="submit" className="post-comment-btn">
-            Post your comment
+            Post comment
           </button>
         )}
       </form>

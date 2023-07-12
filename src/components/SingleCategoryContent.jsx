@@ -29,16 +29,17 @@ export function SingleCategoryContent({ categories, setReviewId }) {
   }, []);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   return (
     <main>
       <section>
-        <h2>{individualCategory.slug}</h2>
-        <p>{individualCategory.description}</p>
+        <h2 className="page-headings">{individualCategory.slug}</h2>
+        <p className="single-category-par">
+          <em>{individualCategory.description}</em>
+        </p>
       </section>
-      <h3>More reviews of this genre</h3>
       <ul className="review-card-container">
         {categoryReviews.map(
           ({ review_id, owner, title, comment_count, votes }) => {

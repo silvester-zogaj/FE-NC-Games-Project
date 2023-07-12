@@ -56,6 +56,10 @@ export const postReviewComment = (review_id, newComment) => {
     });
 };
 
+export const deleteReviewComment = (comment_id) => {
+  return ncGamesApi.delete(`/comments/${comment_id}`);
+};
+
 export const getCategories = () => {
   return ncGamesApi
     .get(`/categories`)
