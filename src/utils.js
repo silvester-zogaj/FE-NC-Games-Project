@@ -70,3 +70,7 @@ export const getCategories = () => {
       console.log(err);
     });
 };
+
+export const capitalizeFirstLetter = (word) => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+};

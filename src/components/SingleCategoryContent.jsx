@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getCategories, getReviews } from "../utils";
+import { getCategories, getReviews, capitalizeFirstLetter } from "../utils";
 import { CategoryRevCard } from "./CategoryRevCard";
 
 export function SingleCategoryContent({ categories, setReviewId }) {
@@ -35,7 +35,9 @@ export function SingleCategoryContent({ categories, setReviewId }) {
   return (
     <main>
       <section>
-        <h2 className="page-headings">{individualCategory.slug}</h2>
+        <h2 className="page-headings">
+          {capitalizeFirstLetter(individualCategory.slug)}
+        </h2>
         <p className="single-category-par">
           <em>{individualCategory.description}</em>
         </p>
