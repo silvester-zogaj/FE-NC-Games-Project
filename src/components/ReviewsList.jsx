@@ -14,7 +14,7 @@ function ReviewsList({ setReviewId }) {
   }, []);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   return (

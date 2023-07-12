@@ -14,7 +14,7 @@ function CategoriesList({ categories, setCategories, setCategoryFilter }) {
   }, []);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   return (

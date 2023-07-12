@@ -56,6 +56,10 @@ export const postReviewComment = (review_id, newComment) => {
     });
 };
 
+export const deleteReviewComment = (comment_id) => {
+  return ncGamesApi.delete(`/comments/${comment_id}`);
+};
+
 export const getCategories = () => {
   return ncGamesApi
     .get(`/categories`)
@@ -65,4 +69,8 @@ export const getCategories = () => {
     .catch((err) => {
       console.log(err);
     });
+};
+
+export const capitalizeFirstLetter = (word) => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
 };
