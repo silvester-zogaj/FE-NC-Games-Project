@@ -28,13 +28,17 @@ export function CommentCard({
     <li key={comment_id} className="comment-card">
       <p className="comment-card-body">{body}</p>
       <p className="comment-card-author">{author}</p>
-      <p className="comment-card-votes">Votes: {votes}</p>
-      <p className="comment-card-date">Posted on: {created_at}</p>
-      {user.username === author ? (
-        <button className="comment-card-del-btn" onClick={handleClick}>Delete comment</button>
-      ) : (
-        <></>
-      )}
+      <div className="comment-card-lower-container">
+        <p className="comment-card-votes">Votes: {votes}</p>
+        {user.username === author ? (
+          <button className="comment-card-del-btn" onClick={handleClick}>
+            Delete comment
+          </button>
+        ) : (
+          <></>
+        )}
+        <p className="comment-card-date">Posted on: {created_at}</p>
+      </div>
     </li>
   );
 }
