@@ -199,7 +199,7 @@ body {
 }
 .comment-card-author {
   position: absolute;
-  top: -30%;
+  top: -20%;
   left: 10%;
   font-weight: 600;
   color: var(--secondary-color);
@@ -220,11 +220,17 @@ body {
   padding: 5px 0 0 5px;
 }
 
+.comment-card-lower-container {
+  position: relative;
+
+  display: flex;
+  justify-content: space-around;
+}
+
 .comment-card-votes,
 .comment-card-date {
-  position: absolute;
-  bottom: -30%;
-
+  width: 20%;
+  min-width: 100px;
   font-size: 12px;
 }
 
@@ -237,7 +243,7 @@ body {
 }
 .comment-card-del-btn {
   position: absolute;
-  bottom: -40%;
+  bottom: -100%;
   left: 50%;
   margin-left: -64px;
   font-size: 12px;

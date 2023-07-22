@@ -72,6 +72,7 @@ export function Comments({ user }) {
         <label htmlFor="post-comment-input"></label>
         <textarea
           id="post-comment-input"
+          maxLength="100"
           required
           onChange={handleChange}
           value={commentInput}
