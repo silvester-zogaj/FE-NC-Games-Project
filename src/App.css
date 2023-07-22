@@ -5,21 +5,23 @@
 }
 #root {
   max-width: 1280px;
-  margin: 0 auto;
+  /* width: 80%; */
   padding: 2rem;
   text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: var(--primary-color);
+  color: white;
 }
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
 }
 
-body {
-  background-color: var(--primary-color);
-  color: white;
-  display: flex;
+.header {
+  font-size: 38px;
 }
+
 .nav-links-container {
   margin-top: 20px;
 }
@@ -65,7 +67,7 @@ body {
 }
 .review-card {
   margin: 50px;
-  width: 450px;
+  width: 39%;
   height: 220px;
   list-style: none;
   position: relative;
@@ -79,17 +81,14 @@ body {
   flex-direction: column;
 }
 
-.review-card-comment_count {
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
+.lower-rev-card-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .review-card-votes {
   font-weight: 600;
-  position: absolute;
-  bottom: 5%;
-  left: 5%;
 }
 
 .review-card-btn {
@@ -119,16 +118,23 @@ body {
 .single-review-body {
   margin-top: 50px;
 }
+.single-review-img {
+  width: 60%;
+  height: 400px;
+  padding: 15px 0;
+}
 
 .single-review-votes {
   font-weight: 600;
-  position: absolute;
-  bottom: 0;
-  left: 20%;
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
+}
+
+.single-review-designer {
+  font-weight: 600;
 }
 
 .thumbs {
@@ -150,18 +156,9 @@ body {
   bottom: 0;
   color: goldenrod;
 }
-.single-review-img {
-  width: 60%;
-  height: 400px;
-  padding: 15px 0;
-}
 
 .single-review-date {
-  position: absolute;
-  bottom: 0;
-  right: 20%;
-  max-width: 150px;
-  width: 40%;
+  font-size: 12px;
 }
 
 .single-review-btn {
@@ -179,7 +176,7 @@ body {
 /* ----COMMENTS----- */
 
 .comments-heading {
-  margin-top: 150px;
+  margin-top: 120px;
   margin-bottom: -100px;
   font-size: 40px;
   color: var(--secondary-color);
@@ -316,39 +313,4 @@ body {
 .category-links {
   text-decoration: none;
   color: white;
-}
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

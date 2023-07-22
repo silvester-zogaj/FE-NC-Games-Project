@@ -30,6 +30,7 @@ export function CommentCard({
       <p className="comment-card-author">{author}</p>
       <div className="comment-card-lower-container">
         <p className="comment-card-votes">Votes: {votes}</p>
+        <p className="comment-card-date">Posted on: {created_at}</p>
         {user.username === author ? (
           <button className="comment-card-del-btn" onClick={handleClick}>
             Delete comment
@@ -37,7 +38,6 @@ export function CommentCard({
         ) : (
           <></>
         )}
-        <p className="comment-card-date">Posted on: {created_at}</p>
       </div>
     </li>
   );

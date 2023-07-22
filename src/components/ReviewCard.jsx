@@ -14,18 +14,20 @@ export function ReviewCard({
         <em>{title}</em>
       </h3>
       <p className="review-card-username">USER: {owner}</p>
-      <p className="review-card-comment_count">comments: {comment_count}</p>
-      <p className="review-card-votes">votes: {votes}</p>
-      <Link to={`/reviews/${review_id}`} className="nav-link">
-        <button
-          className="review-card-btn"
-          onClick={() => {
-            setReviewId(review_id);
-          }}
-        >
-          Go to review
-        </button>
-      </Link>
+      <div className="lower-rev-card-container">
+        <p className="review-card-votes">votes: {votes}</p>
+        <Link to={`/reviews/${review_id}`} className="nav-link">
+          <button
+            className="review-card-btn"
+            onClick={() => {
+              setReviewId(review_id);
+            }}
+          >
+            Go to review
+          </button>
+        </Link>
+        <p className="review-card-comment_count">comments: {comment_count}</p>
+      </div>
     </li>
   );
 }
