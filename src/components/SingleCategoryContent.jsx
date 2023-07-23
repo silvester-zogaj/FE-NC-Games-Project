@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getCategories, getReviews, capitalizeFirstLetter } from "../utils";
-import { CategoryRevCard } from "./CategoryRevCard";
+import { ReviewCard } from "./ReviewCard";
 
 export function SingleCategoryContent({ categories, setReviewId }) {
   const [individualCategory, setIndividualCategory] = useState({});
@@ -46,7 +46,7 @@ export function SingleCategoryContent({ categories, setReviewId }) {
         {categoryReviews.map(
           ({ review_id, owner, title, comment_count, votes }) => {
             return (
-              <CategoryRevCard
+              <ReviewCard
                 key={review_id}
                 owner={owner}
                 title={title}

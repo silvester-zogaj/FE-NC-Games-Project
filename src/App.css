@@ -4,8 +4,7 @@
   --ternary-color: rgb(6, 57, 134);
 }
 #root {
-  max-width: 1280px;
-  /* width: 80%; */
+  width: 100%;
   padding: 2rem;
   text-align: center;
   justify-content: center;
