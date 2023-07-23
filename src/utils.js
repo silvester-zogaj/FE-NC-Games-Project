@@ -74,3 +74,9 @@ export const getCategories = () => {
 export const capitalizeFirstLetter = (word) => {
   return word.charAt(0).toUpperCase() + word.slice(1);
 };
+
+export const firstEightChars = (word) => {
+  const regex = /^........../g;
+  const newWord = word.match(regex);
+  return newWord;
+};

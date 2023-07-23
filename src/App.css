@@ -4,10 +4,14 @@
   --ternary-color: rgb(6, 57, 134);
 }
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
   padding: 2rem;
   text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: var(--primary-color);
+  color: white;
+  overflow: hidden;
 }
 * {
   margin: 0;
@@ -15,11 +19,10 @@
   /* box-sizing: border-box; */
 }
 
-body {
-  background-color: var(--primary-color);
-  color: white;
-  display: flex;
+.header {
+  font-size: 38px;
 }
+
 .nav-links-container {
   margin-top: 20px;
 }
@@ -65,7 +68,8 @@ body {
 }
 .review-card {
   margin: 50px;
-  width: 450px;
+  width: 32%;
+  min-width: 350px;
   height: 220px;
   list-style: none;
   position: relative;
@@ -77,19 +81,25 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 30px;
 }
 
-.review-card-comment_count {
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
+.upper-rev-card-container {
+  margin-top: 60px;
+}
+.lower-rev-card-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .review-card-votes {
   font-weight: 600;
-  position: absolute;
-  bottom: 5%;
-  left: 5%;
+  width: 30%;
+}
+
+.review-card-comment_count {
+  width: 30%;
 }
 
 .review-card-btn {
@@ -117,18 +127,26 @@ body {
 }
 
 .single-review-body {
-  margin-top: 50px;
+  margin: 50px auto 0;
+  width: 70%;
+}
+.single-review-img {
+  width: 60%;
+  height: 400px;
+  padding: 15px 0;
 }
 
 .single-review-votes {
   font-weight: 600;
-  position: absolute;
-  bottom: 0;
-  left: 20%;
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
+}
+
+.single-review-designer {
+  font-weight: 600;
 }
 
 .thumbs {
@@ -150,18 +168,9 @@ body {
   bottom: 0;
   color: goldenrod;
 }
-.single-review-img {
-  width: 60%;
-  height: 400px;
-  padding: 15px 0;
-}
 
 .single-review-date {
-  position: absolute;
-  bottom: 0;
-  right: 20%;
-  max-width: 150px;
-  width: 40%;
+  font-size: 12px;
 }
 
 .single-review-btn {
@@ -179,23 +188,23 @@ body {
 /* ----COMMENTS----- */
 
 .comments-heading {
-  margin-top: 150px;
-  margin-bottom: -100px;
+  margin-top: 130px;
   font-size: 40px;
   color: var(--secondary-color);
-
   text-decoration: underline;
 }
 
 .comment-card-container {
   display: flex;
   flex-direction: column;
+  margin-top: -30px;
 }
 
 .comment-card {
   list-style: none;
   position: relative;
-  margin-top: 150px;
+  margin: 100px auto 0;
+  width: 80%;
 }
 .comment-card-author {
   position: absolute;
@@ -206,6 +215,7 @@ body {
 }
 
 .comment-card-body {
+  font-size: 14px;
   background-color: white;
   border-radius: 10px;
   text-align: left;
@@ -215,7 +225,6 @@ body {
   color: var(--ternary-color);
   display: flex;
   word-wrap: break-word;
-
   word-break: break-word;
   padding: 5px 0 0 5px;
 }
@@ -257,13 +266,13 @@ body {
   flex-direction: column;
   width: 70%;
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 70px;
 }
 
 #post-comment-input {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
-  height: 150px;
+  height: 120px;
   background-color: rgb(211, 213, 233);
   color: var(--primary-color);
   font-weight: 600;
@@ -300,10 +309,12 @@ body {
 .category-card {
   list-style: none;
   background-color: rgb(211, 213, 233);
-
+  width: 70%;
+  min-width: 350px;
   border-radius: 10px;
   padding: 15px;
   color: navy;
+  margin: 0 auto 10px;
 }
 
 .category-card-name {
@@ -316,39 +327,4 @@ body {
 .category-links {
   text-decoration: none;
   color: white;
-}
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { deleteReviewComment } from "../utils";
+import { deleteReviewComment, firstEightChars } from "../utils";
 import { useParams } from "react-router-dom";
 
 export function CommentCard({
@@ -30,6 +30,9 @@ export function CommentCard({
       <p className="comment-card-author">{author}</p>
       <div className="comment-card-lower-container">
         <p className="comment-card-votes">Votes: {votes}</p>
+        <p className="comment-card-date">
+          Posted on: {firstEightChars(created_at)}
+        </p>
         {user.username === author ? (
           <button className="comment-card-del-btn" onClick={handleClick}>
             Delete comment
@@ -37,7 +40,6 @@ export function CommentCard({
         ) : (
           <></>
         )}
-        <p className="comment-card-date">Posted on: {created_at}</p>
       </div>
     </li>
   );
