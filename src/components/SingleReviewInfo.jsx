@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
-import { patchReviewUpVote, patchReviewDownVote } from "../utils";
+import {
+  patchReviewUpVote,
+  patchReviewDownVote,
+  firstEightChars,
+} from "../utils";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -79,7 +83,9 @@ export function SingleReviewInfo({
         )}
       </section>
 
-      <p className="single-review-date">Posted on: {created_at}</p>
+      <p className="single-review-date">
+        Posted on: {firstEightChars(created_at)}
+      </p>
       <Link to="/reviews" className="nav-link">
         <button className="single-review-btn">View all reviews</button>
       </Link>
