@@ -1,7 +1,7 @@
 :root {
-  --primary-color: rgb(18, 16, 75);
-  --secondary-color: rgb(243, 44, 104);
-  --ternary-color: rgb(6, 57, 134);
+  --primary-color: rgba(14, 74, 129, 0.781);
+  --secondary-color: #ed1277;
+  --ternary-color: rgb(0, 50, 124);
 }
 #root {
   width: 100%;
@@ -135,9 +135,11 @@ button {
   width: 70%;
 }
 .single-review-img {
-  width: 60%;
+  width: 40%;
+  min-width: 20rem;
   height: 400px;
   padding: 15px 0;
+  margin-top: 1rem;
 }
 
 .single-review-votes {
